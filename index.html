@@ -1,0 +1,862 @@
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="color-scheme" content="light" />
+  <title>My Portfolio</title>
+
+  <!-- Scroll Fix: Block browser jump to saved scroll -->
+  <style>
+    :root {
+      color-scheme: light;
+    }
+
+    html {
+      scroll-behavior: auto !important;
+    }
+  </style>
+
+  <script>
+    if ('scrollRestoration' in history) {
+      history.scrollRestoration = 'manual';
+    }
+
+    // Prevent jump before layout
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
+
+    // Ensure we're at top when DOM is ready
+    window.addEventListener('DOMContentLoaded', () => {
+      window.scrollTo(0, 0);
+    });
+  </script>
+
+  <!-- Tailwind & Fonts -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="bg-white text-gray-900 font-sans antialiased">
+
+ <!-- Navigation -->
+<nav class="fixed w-full bg-white z-50 shadow-sm">
+  <div class="container mx-auto px-6 py-5">
+    <div class="flex justify-between items-center">
+      <a href="#" class="text-2xl font-bold">SNEHITHA'S PORTFOLIO</a>
+
+      <!-- Desktop Nav Links + Theme Toggle -->
+      <div class="hidden md:flex space-x-8 items-center">
+        <a href="#home" class="nav-link text-lg">Home</a>
+        <a href="#about" class="nav-link text-lg">About</a>
+        <a href="#projects" class="nav-link text-lg">Projects</a>
+        <a href="#skills" class="nav-link text-lg">Skills</a>
+        <a href="#experience" class="nav-link text-lg">Experience</a>
+        <a href="#achievements" class="nav-link text-lg">Achievements</a>
+        <a href="#resume" class="nav-link text-lg">Resume</a>
+
+        <!-- 🌙 Theme Toggle Button
+        <button id="themeToggle" class="text-xl hover:scale-110 transition" title="Toggle Theme">
+          <i class="fas fa-moon"></i>
+        </button>
+      </div>
+
+       Mobile Menu Toggle
+      <button id="mobileMenuButton" class="md:hidden focus:outline-none">
+        <i class="fas fa-bars text-xl"></i>
+      </button>
+    </div> -->
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="hidden md:hidden mt-4 space-y-4 pb-4">
+      <a href="#home" class="block nav-link">Home</a>
+      <a href="#about" class="block nav-link">About</a>
+      <a href="#projects" class="block nav-link">Projects</a>
+      <a href="#skills" class="block nav-link">Skills</a>
+      <a href="#experience" class="block nav-link">Experience</a>
+      <a href="#achievements" class="block nav-link">Achievements</a>
+      <a href="#resume" class="block nav-link">Resume</a>
+
+      <!-- Optional: Theme Toggle for Mobile -->
+      <button id="themeToggleMobile" class="block nav-link text-left text-lg" title="Toggle Theme">
+        Toggle Theme
+      </button>
+    </div>
+  </div>
+</nav>
+
+    <!-- Hero Section -->
+  <section id="home" class="min-h-screen flex items-center pt-20">
+    <div class="container mx-auto px-6 flex flex-col md:flex-row items-center">
+      <div class="md:w-1/2 mb-10 md:mb-0">
+        <h1 class="text-4xl md:text-6xl font-bold mb-4">Hi, I'm Ch.V.Snehitha</h1>
+        <h2 class="text-2xl md:text-3xl font-semibold mb-6">Full Stack Developer</h2>
+        <p class="text-lg mb-8 max-w-lg">
+          I craft responsive web apps using React, Node.js, and MongoDB. With experience in IoT and machine learning, I enjoy building practical, impactful tech solutions.
+        </p>
+        <div class="flex space-x-4">
+          <a href="#projects" class="px-6 py-3 bg-black text-white font-medium rounded hover:bg-gray-800 transition">View Work</a>
+          <a href="#contact" class="px-6 py-3 border-2 border-black font-medium rounded hover:bg-gray-100 transition">Contact Me</a>
+        </div>
+      </div>
+      <div class="md:w-1/2 flex justify-center">
+        <div class="w-64 h-64 md:w-80 md:h-80 rounded-full border-4 border-black overflow-hidden">
+          <img src="home-pic.jpg" alt="Profile" class="w-full h-full object-cover" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="py-20 bg-gray-50">
+    <div class="container mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-16">
+        About <span class="border-b-4 border-black">Me</span>
+      </h2>
+      <div class="flex flex-col md:flex-row items-center">
+        <div class="md:w-1/3 mb-10 md:mb-0 flex justify-center">
+          <div class="w-64 h-64 rounded-full border-4 border-black overflow-hidden">
+            <img src="about-pic.jpg" alt="Profile" class="w-full h-full object-cover" />
+          </div>
+        </div>
+        <div class="md:w-2/3 md:pl-12">
+          <h3 class="text-2xl font-semibold mb-4">Who am I?</h3>
+          <p class="text-lg mb-6">
+            I'm Snehitha, a Computer Science and Engineering student at VIT Chennai with hands-on experience in full-stack web development, IoT systems, and machine learning. I’ve interned as a MERN Stack Developer at Ethnus and as a Tech Lead Intern at Viswam.AI, where I contributed to impactful projects using technologies like React, Node.js, Streamlit, and Python.
+          </p>
+          <p class="text-lg mb-8">
+            My work ranges from developing intelligent automation systems and task-tracking dashboards to creating accessible HCI-based web interfaces. I have a strong foundation in authentication mechanisms, responsive design, and collaborative development. With a solid academic background and a passion for solving real-world problems, I’m driven to innovate and build tech that makes a meaningful impact.
+          </p>
+          <div class="grid grid-cols-2 gap-4">
+            <div>
+              <p class="font-medium"><span class="font-bold">Name:</span> Ch.V.Snehitha</p>
+              <p class="font-medium"><span class="font-bold">Email:</span> snehithachaluvadi@gmail.com</p>
+            </div>
+            <div>
+              <p class="font-medium"><span class="font-bold">From:</span> Andhra Pradesh, Ongole</p>
+              <p class="font-medium"><span class="font-bold">Freelance:</span> Available</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!-- Projects Section -->
+<section id="projects" class="py-20">
+  <div class="container mx-auto px-6">
+    <h2 class="text-3xl font-bold text-center mb-4">
+      My <span class="border-b-4 border-black">Projects</span>
+    </h2>
+    <p class="text-center text-lg mb-16 max-w-2xl mx-auto">
+      Here are some of my recent projects. Each one was carefully crafted to solve specific problems and deliver value.
+    </p>
+
+    <!-- Main Projects Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      
+      <!-- Project 1 -->
+      <div class="project-card bg-white border border-gray-200 rounded-lg overflow-hidden shadow-sm transition duration-300">
+        <div class="h-48 overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1470&q=80" alt="Restaurant System" class="w-full h-full object-cover">
+        </div>
+        <div class="p-6">
+          <h3 class="text-xl font-bold mb-2">HCI-Based Restaurant System</h3>
+          <p class="text-gray-700 mb-4">
+            Designed a web-based restaurant interface for dynamic menu browsing, table booking, and feedback submission. Applied HCI usability heuristics to ensure accessibility and optimized layout for both mobile and desktop platforms.
+          </p>
+          <div class="flex flex-wrap gap-2 mb-4">
+            <span class="px-2 py-1 bg-gray-100 rounded text-sm">HTML</span>
+            <span class="px-2 py-1 bg-gray-100 rounded text-sm">CSS</span>
+            <span class="px-2 py-1 bg-gray-100 rounded text-sm">JavaScript</span>
+          </div>
+          <div class="flex gap-4">
+            <a href="https://restaurant-frontend-ten-ashy.vercel.app/" target="_blank" class="font-medium hover:underline">Live Demo →</a>
+            <a href="https://github.com/snehithachaluvadi/restaurant-management" target="_blank" class="font-medium hover:underline">GitHub Repo →</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 2 -->
+      <div class="project-card bg-white border border-gray-200 rounded-lg overflow-hidden shadow-sm transition duration-300">
+        <div class="h-48 overflow-hidden">
+          <img src="auction.jpg" alt="Auction Platform" class="w-full h-full object-cover">
+        </div>
+        <div class="p-6">
+          <h3 class="text-xl font-bold mb-2">Online Auction Platform</h3>
+          <p class="text-gray-700 mb-4">
+            Developed a full-stack Online Auction Platform using the MERN stack. Implemented complete CRUD operations for item listing and bidding, along with secure user authentication and ensured smooth client-server interaction.
+          </p>
+          <div class="flex flex-wrap gap-2 mb-4">
+            <span class="px-2 py-1 bg-gray-100 rounded text-sm">MongoDB</span>
+            <span class="px-2 py-1 bg-gray-100 rounded text-sm">Express.js</span>
+            <span class="px-2 py-1 bg-gray-100 rounded text-sm">React</span>
+            <span class="px-2 py-1 bg-gray-100 rounded text-sm">Node.js</span>
+          </div>
+          <div class="flex gap-4">
+            <a href="https://frontend-5hru.vercel.app/" target="_blank" class="font-medium hover:underline">Live Demo →</a>
+            <a href="https://github.com/snehithachaluvadi/online-auction" target="_blank" class="font-medium hover:underline">GitHub Repo →</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 3 -->
+      <div class="project-card bg-white border border-gray-200 rounded-lg overflow-hidden shadow-sm transition duration-300">
+        <div class="h-48 overflow-hidden">
+          <img src="intern.png" alt="Timeline Tracker" class="w-full h-full object-cover">
+        </div>
+        <div class="p-6">
+          <h3 class="text-xl font-bold mb-2">Intern Task Timeline Tracker</h3>
+          <p class="text-gray-700 mb-4">
+            A Streamlit-powered dashboard that allows interns to log, visualize, and monitor tasks across a dynamic timeline interface. Built using Python, Streamlit, and SMTP for secure logging and real-time email notifications.
+          </p>
+          <div class="flex flex-wrap gap-2 mb-4">
+            <span class="px-2 py-1 bg-gray-100 rounded text-sm">Python</span>
+            <span class="px-2 py-1 bg-gray-100 rounded text-sm">Streamlit</span>
+            <span class="px-2 py-1 bg-gray-100 rounded text-sm">SMTP</span>
+          </div>
+          <div class="flex gap-4">
+            <a href="https://intern-task-timeline-tracker-app.streamlit.app/" target="_blank" class="font-medium hover:underline">Live Demo →</a>
+            <a href="https://github.com/snehithachaluvadi/Intern-Task-Timeline-Tracker-streamlit" target="_blank" class="font-medium hover:underline">GitHub Repo →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- More Projects Section -->
+    <div id="more-projects" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-10 hidden">
+      
+      <!-- Project 4 -->
+      <div class="project-card bg-white border border-gray-200 rounded-lg overflow-hidden shadow-sm transition duration-300">
+        <div class="h-48 overflow-hidden">
+          <img src="traffic.jpg" alt="Traffic Light System" class="w-full h-full object-cover">
+        </div>
+        <div class="p-6">
+          <h3 class="text-xl font-bold mb-2">Assistive Traffic Light System</h3>
+          <p class="text-gray-700 mb-4">
+            Developed an Arduino-based system with buzzers and timers to guide visually impaired pedestrians. Synchronized audio logic with traffic light phases.
+          </p>
+          <div class="flex flex-wrap gap-2 mb-4">
+            <span class="px-2 py-1 bg-gray-100 rounded text-sm">Arduino</span>
+            <span class="px-2 py-1 bg-gray-100 rounded text-sm">Embedded C</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 5 -->
+      <div class="project-card bg-white border border-gray-200 rounded-lg overflow-hidden shadow-sm transition duration-300">
+        <div class="h-48 overflow-hidden">
+          <img src="fire.jpg" alt="Fire Safety System" class="w-full h-full object-cover">
+        </div>
+        <div class="p-6">
+          <h3 class="text-xl font-bold mb-2">Fire Safety System with Alerting</h3>
+          <p class="text-gray-700 mb-4">
+            Automated detection using flame/smoke sensors, relays, and GSM module. Triggered water sprinklers and sent SMS alerts with location/time.
+          </p>
+          <div class="flex flex-wrap gap-2 mb-4">
+            <span class="px-2 py-1 bg-gray-100 rounded text-sm">IoT</span>
+            <span class="px-2 py-1 bg-gray-100 rounded text-sm">GSM</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 6 -->
+      <div class="project-card bg-white border border-gray-200 rounded-lg overflow-hidden shadow-sm transition duration-300">
+        <div class="h-48 overflow-hidden">
+          <img src="solar.jpg" alt="Solar IoT Street Light" class="w-full h-full object-cover">
+        </div>
+        <div class="p-6">
+          <h3 class="text-xl font-bold mb-2">Solar-Powered IoT Street Light</h3>
+          <p class="text-gray-700 mb-4">
+            Created a smart lighting system using solar panels, LDR sensors, and batteries. Automated switching logic for energy efficiency.
+          </p>
+          <div class="flex flex-wrap gap-2 mb-4">
+            <span class="px-2 py-1 bg-gray-100 rounded text-sm">Solar</span>
+            <span class="px-2 py-1 bg-gray-100 rounded text-sm">IoT</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 7 -->
+      <div class="project-card bg-white border border-gray-200 rounded-lg overflow-hidden shadow-sm transition duration-300">
+        <div class="h-48 overflow-hidden">
+          <img src="robot.jpg" alt="Maze Robot" class="w-full h-full object-cover">
+        </div>
+        <div class="p-6">
+          <h3 class="text-xl font-bold mb-2">Maze Solving Robot (Nav Bot)</h3>
+          <p class="text-gray-700 mb-4">
+            Built using Arduino + Raspberry Pi. Used PID control, IR + ultrasonic sensors for line following and obstacle avoidance. Optimized pathfinding by 40%.
+          </p>
+          <div class="flex flex-wrap gap-2 mb-4">
+            <span class="px-2 py-1 bg-gray-100 rounded text-sm">Arduino</span>
+            <span class="px-2 py-1 bg-gray-100 rounded text-sm">Raspberry Pi</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Toggle Button -->
+    <div class="flex justify-center mt-12">
+      <button id="toggleProjectsBtn" onclick="toggleProjects()" class="px-6 py-3 border-2 border-black font-medium rounded hover:bg-gray-100 transition">
+        View All Projects
+      </button>
+    </div>
+  </div>
+</section>
+
+
+<!-- Skills Section -->
+<section id="skills" class="py-20 bg-gray-50 text-gray-900">
+  <div class="container mx-auto px-6">
+    <h2 class="text-3xl font-bold text-center mb-4">
+      My <span class="border-b-4 border-black">Skills</span>
+    </h2>
+    <p class="text-center text-lg mb-16 max-w-2xl mx-auto">
+      I've worked with a variety of technologies in the web development and AI/ML world. Here are my core competencies:
+    </p>
+
+    <!-- LANGUAGES -->
+    <div class="mb-10 pl-8">
+      <h3 class="text-2xl font-semibold mb-4 flex items-center">
+        <span class="inline-block w-1 h-6 bg-black mr-3"></span>Languages
+      </h3>
+      <div class="flex overflow-x-auto space-x-9 pb-2">
+        <div class="flex-shrink-0 text-center">
+          <div class="w-14 h-14 flex items-center justify-center border border-black rounded-full bg-white hover:bg-black hover:text-white transition text-sm font-bold">
+            C++
+          </div>
+          <p class="text-xs mt-2">C / C++</p>
+        </div>
+
+        <div class="flex-shrink-0 text-center">
+          <div class="w-14 h-14 flex items-center justify-center border border-black rounded-full hover:bg-black hover:text-white transition">
+            <i class="fab fa-java text-2xl"></i>
+          </div>
+          <p class="text-xs mt-2">Java</p>
+        </div>
+
+        <div class="flex-shrink-0 text-center">
+          <div class="w-14 h-14 flex items-center justify-center border border-black rounded-full hover:bg-black hover:text-white transition">
+            <i class="fab fa-python text-2xl"></i>
+          </div>
+          <p class="text-xs mt-2">Python</p>
+        </div>
+
+        <div class="flex-shrink-0 text-center">
+          <div class="w-14 h-14 flex items-center justify-center border border-black rounded-full hover:bg-black hover:text-white transition">
+            <i class="fab fa-js text-2xl"></i>
+          </div>
+          <p class="text-xs mt-2">JavaScript</p>
+        </div>
+
+        <div class="flex-shrink-0 text-center">
+          <div class="w-14 h-14 flex items-center justify-center border border-black rounded-full hover:bg-black hover:text-white transition">
+            <i class="fab fa-html5 text-2xl"></i>
+          </div>
+          <p class="text-xs mt-2">HTML</p>
+        </div>
+
+        <div class="flex-shrink-0 text-center">
+          <div class="w-14 h-14 flex items-center justify-center border border-black rounded-full hover:bg-black hover:text-white transition">
+            <i class="fab fa-css3-alt text-2xl"></i>
+          </div>
+          <p class="text-xs mt-2">CSS</p>
+        </div>
+
+        <div class="flex-shrink-0 text-center">
+          <div class="w-14 h-14 flex items-center justify-center border border-black rounded-full hover:bg-black hover:text-white transition">
+            <i class="fas fa-chart-line text-2xl"></i>
+          </div>
+          <p class="text-xs mt-2">R</p>
+        </div>
+
+        <div class="flex-shrink-0 text-center">
+          <div class="w-14 h-14 flex items-center justify-center border border-black rounded-full hover:bg-black hover:text-white transition">
+            <i class="fas fa-database text-2xl"></i>
+          </div>
+          <p class="text-xs mt-2">SQL</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- FRAMEWORKS & LIBRARIES -->
+    <div class="mb-10 pl-8">
+      <h3 class="text-2xl font-semibold mb-4 flex items-center">
+        <span class="inline-block w-1 h-6 bg-black mr-3"></span>Frameworks & Libraries
+      </h3>
+      <div class="flex overflow-x-auto space-x-9 pb-2">
+        <div class="flex-shrink-0 text-center">
+          <div class="w-14 h-14 flex items-center justify-center border border-black rounded-full hover:bg-black hover:text-white transition">
+            <i class="fab fa-react text-2xl"></i>
+          </div>
+          <p class="text-xs mt-2">React</p>
+        </div>
+
+        <div class="flex-shrink-0 text-center">
+          <div class="w-14 h-14 flex items-center justify-center border border-black rounded-full hover:bg-black hover:text-white transition">
+            <i class="fab fa-node-js text-2xl"></i>
+          </div>
+          <p class="text-xs mt-2">Node.js</p>
+        </div>
+
+        <div class="flex-shrink-0 text-center">
+          <div class="w-14 h-14 flex items-center justify-center border border-black rounded-full hover:bg-black hover:text-white transition">
+            <i class="fas fa-server text-2xl"></i>
+          </div>
+          <p class="text-xs mt-2">Express.js</p>
+        </div>
+
+        <div class="flex-shrink-0 text-center">
+          <div class="w-14 h-14 flex items-center justify-center border border-black rounded-full hover:bg-black hover:text-white transition">
+            <i class="fas fa-microchip text-2xl"></i>
+          </div>
+          <p class="text-xs mt-2">Arduino</p>
+        </div>
+
+        <div class="flex-shrink-0 text-center">
+          <div class="w-14 h-14 flex items-center justify-center border border-black rounded-full hover:bg-black hover:text-white transition">
+            <i class="fas fa-chart-area text-2xl"></i>
+          </div>
+          <p class="text-xs mt-2">Streamlit</p>
+        </div>
+
+        <div class="flex-shrink-0 text-center">
+          <div class="w-14 h-14 flex items-center justify-center border border-black rounded-full hover:bg-black hover:text-white transition text-lg font-bold">
+            NP
+          </div>
+          <p class="text-xs mt-2">NumPy</p>
+        </div>
+
+        <div class="flex-shrink-0 text-center">
+          <div class="w-14 h-14 flex items-center justify-center border border-black rounded-full hover:bg-black hover:text-white transition text-lg font-bold">
+            PD
+          </div>
+          <p class="text-xs mt-2">Pandas</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- DEVELOPER TOOLS -->
+    <div class="mb-10 pl-8">
+      <h3 class="text-2xl font-semibold mb-4 flex items-center">
+        <span class="inline-block w-1 h-6 bg-black mr-3"></span>Developer Tools
+      </h3>
+      <div class="flex overflow-x-auto space-x-9 pb-2">
+        <div class="flex-shrink-0 text-center">
+          <div class="w-14 h-14 flex items-center justify-center border border-black rounded-full hover:bg-black hover:text-white transition">
+            <i class="fab fa-git-alt text-2xl"></i>
+          </div>
+          <p class="text-xs mt-2">Git</p>
+        </div>
+
+        <div class="flex-shrink-0 text-center">
+          <div class="w-14 h-14 flex items-center justify-center border border-black rounded-full hover:bg-black hover:text-white transition">
+            <i class="fab fa-github text-2xl"></i>
+          </div>
+          <p class="text-xs mt-2">GitHub</p>
+        </div>
+
+        <div class="flex-shrink-0 text-center">
+          <div class="w-14 h-14 flex items-center justify-center border border-black rounded-full hover:bg-black hover:text-white transition">
+            <i class="fab fa-gitlab text-2xl"></i>
+          </div>
+          <p class="text-xs mt-2">GitLab</p>
+        </div>
+
+        <div class="flex-shrink-0 text-center">
+          <div class="w-14 h-14 flex items-center justify-center border border-black rounded-full hover:bg-black hover:text-white transition">
+            <i class="fas fa-code text-2xl"></i>
+          </div>
+          <p class="text-xs mt-2">VS Code</p>
+        </div>
+
+        <div class="flex-shrink-0 text-center">
+          <div class="w-14 h-14 flex items-center justify-center border border-black rounded-full hover:bg-black hover:text-white transition">
+            <i class="fas fa-database text-2xl"></i>
+          </div>
+          <p class="text-xs mt-2">MongoDB</p>
+        </div>
+
+        <div class="flex-shrink-0 text-center">
+          <div class="w-14 h-14 flex items-center justify-center border border-black rounded-full hover:bg-black hover:text-white transition text-lg font-bold">
+            JN
+          </div>
+          <p class="text-xs mt-2">Jupyter</p>
+        </div>
+
+        <div class="flex-shrink-0 text-center">
+          <div class="w-14 h-14 flex items-center justify-center border border-black rounded-full hover:bg-black hover:text-white transition">
+            <i class="fas fa-rocket text-2xl"></i>
+          </div>
+          <p class="text-xs mt-2">Netlify</p>
+        </div>
+
+        <div class="flex-shrink-0 text-center">
+          <div class="w-14 h-14 flex items-center justify-center border border-black rounded-full hover:bg-black hover:text-white transition">
+            <i class="fas fa-cloud-upload-alt text-2xl"></i>
+          </div>
+          <p class="text-xs mt-2">Vercel</p>
+        </div>
+
+        <div class="flex-shrink-0 text-center">
+          <div class="w-14 h-14 flex items-center justify-center border border-black rounded-full hover:bg-black hover:text-white transition">
+            <i class="fas fa-server text-2xl"></i>
+          </div>
+          <p class="text-xs mt-2">Render</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- Experience & Education Section -->
+<section id="experience" class="py-20">
+  <div class="container mx-auto px-6">
+    <h2 class="text-3xl font-bold text-center mb-16">Experience & <span class="border-b-4 border-black">Education</span></h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+      <!-- Work Experience -->
+      <div>
+        <h3 class="text-2xl font-semibold mb-8 text-center">Work Experience</h3>
+        <div class="relative">
+          <div class="border-l-2 border-black pl-8 space-y-8">
+            
+            <!-- Experience 1 -->
+            <div class="relative timeline-item">
+              <div class="bg-white p-6 rounded-lg border-2 border-gray-300 shadow-sm">
+                <div class="flex justify-between items-start">
+                  <div>
+                    <h4 class="text-lg font-bold">Tech Lead Intern</h4>
+                    <p class="font-medium">Viswam.AI (Swecha & IIITH)</p>
+                    <p class="text-sm text-gray-500">Hyderabad, Telangana</p>
+                  </div>
+                  <span class="px-3 py-1 bg-black text-white text-sm rounded-full">May – July 2025</span>
+                </div>
+                <ul class="list-disc list-inside mt-3 text-left space-y-1">
+                  <li>Led development of AI pipelines using Python, NLP, and Transformer architectures.</li>
+                  <li>Guided training and fine-tuning of state-of-the-art AI models.</li>
+                  <li>Collaborated on AI solutions supporting linguistic diversity.</li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Experience 2 -->
+            <div class="relative timeline-item">
+              <div class="bg-white p-6 rounded-lg border-2 border-gray-300 shadow-sm">
+                <div class="flex justify-between items-start">
+                  <div>
+                    <h4 class="text-lg font-bold">MERN Full Stack Intern</h4>
+                    <p class="font-medium">Ethnus</p>
+                  </div>
+                  <span class="px-3 py-1 bg-black text-white text-sm rounded-full">June – July 2024</span>
+                </div>
+                <ul class="list-disc list-inside mt-3 text-left space-y-1">
+                  <li>Built and deployed an Online Auction Platform using MongoDB, Express, ReactJS, and NodeJS.</li>
+                  <li>Developed REST APIs for bids and items, secured access with JWT authentication.</li>
+                  <li>Performed thorough API testing including error and edge-case handling.</li>
+                </ul>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- Education -->
+      <div>
+        <h3 class="text-2xl font-semibold mb-8 text-center">Education</h3>
+        <div class="relative">
+          <div class="border-l-2 border-black pl-8 space-y-8">
+            
+            <!-- VIT -->
+            <div class="relative timeline-item">
+              <div class="bg-white p-6 rounded-lg border-2 border-gray-300 shadow-sm">
+                <div class="flex justify-between items-start">
+                  <div>
+                    <h4 class="text-lg font-bold">B.Tech in Computer Science and Engineering</h4>
+                    <p class="font-medium">Vellore Institute of Technology</p>
+                    <p class="text-sm text-gray-500">Chennai, India</p>
+                  </div>
+                  <span class="px-3 py-1 bg-black text-white text-sm rounded-full whitespace-nowrap">Sept 2022 – Present</span>
+                </div>
+                <p class="mt-3">Current CGPA: <strong>8.78</strong></p>
+              </div>
+            </div>
+
+            <!-- Intermediate -->
+            <div class="relative timeline-item">
+              <div class="bg-white p-6 rounded-lg border-2 border-gray-300 shadow-sm">
+                <div class="flex justify-between items-start">
+                  <div>
+                    <h4 class="text-lg font-bold">Senior Secondary (State Board)</h4>
+                    <p class="font-medium">Narayana Junior College</p>
+                    <p class="text-sm text-gray-500">Ongole, Andhra Pradesh</p>
+                  </div>
+                  <span class="px-3 py-1 bg-black text-white text-sm rounded-full">2020 – 2022</span>
+                </div>
+                <p class="mt-3">Percentage: <strong>92.8%</strong></p>
+              </div>
+            </div>
+
+            <!-- 10th -->
+            <div class="relative timeline-item">
+              <div class="bg-white p-6 rounded-lg border-2 border-gray-300 shadow-sm">
+                <div class="flex justify-between items-start">
+                  <div>
+                    <h4 class="text-lg font-bold">CBSE (X)</h4>
+                    <p class="font-medium">Saibaba Central School</p>
+                    <p class="text-sm text-gray-500">Ongole, Andhra Pradesh</p>
+                  </div>
+                  <span class="px-3 py-1 bg-black text-white text-sm rounded-full">2019 – 2020</span>
+                </div>
+                <p class="mt-3">Percentage: <strong>93.8%</strong></p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Achievements Section -->
+<section id="achievements" class="py-20 bg-gray-50">
+  <div class="container mx-auto px-6">
+    <h2 class="text-3xl font-bold text-center mb-4">
+      My <span class="border-b-4 border-black">Achievements</span>
+    </h2>
+    <p class="text-center text-lg mb-12 max-w-2xl mx-auto">
+      Here are some certifications I've earned to enhance my skills and stay up to date.
+    </p>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+      <!-- Certification 1 -->
+      <div class="bg-white p-6 border border-gray-200 rounded-lg shadow-sm hover:shadow-md transition cursor-pointer"
+           onclick="openCertificateModal('certificates/cert1.jpg')">
+        <h3 class="text-lg font-semibold mb-2">MERN Stack Internship</h3>
+        <p class="text-sm text-gray-600">Ethnus | June – July 2024</p>
+      </div>
+
+      <!-- Certification 2 -->
+      <div class="bg-white p-6 border border-gray-200 rounded-lg shadow-sm hover:shadow-md transition cursor-pointer"
+           onclick="openCertificateModal('certificates/cert2.jpg')">
+        <h3 class="text-lg font-semibold mb-2">Cryptography I</h3>
+        <p class="text-sm text-gray-600">Stanford University (Coursera)</p>
+      </div>
+
+      <!-- Certification 3 -->
+      <div class="bg-white p-6 border border-gray-200 rounded-lg shadow-sm hover:shadow-md transition cursor-pointer"
+           onclick="openCertificateModal('certificates/nptel_forests.jpg')">
+        <h3 class="text-lg font-semibold mb-2">NPTEL – Forests and Their Management</h3>
+        <p class="text-sm text-gray-600">Score: 100% | Jan–Apr 2024</p>
+      </div>
+
+      <!-- Certification 4 -->
+      <div class="bg-white p-6 border border-gray-200 rounded-lg shadow-sm hover:shadow-md transition cursor-pointer"
+           onclick="openCertificateModal('certificates/nptel_wildlife.jpg')">
+        <h3 class="text-lg font-semibold mb-2">NPTEL – Wild Life Ecology</h3>
+        <p class="text-sm text-gray-600">Score: 99% | Jul–Oct 2024</p>
+      </div>
+
+      <!-- Certification 5 -->
+      <div class="bg-white p-6 border border-gray-200 rounded-lg shadow-sm hover:shadow-md transition cursor-pointer"
+           onclick="openCertificateModal('certificates/nptel_conservation.jpg')">
+        <h3 class="text-lg font-semibold mb-2">NPTEL – Conservation Economics</h3>
+        <p class="text-sm text-gray-600">Score: 94% | Jan–Apr 2025</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Resume Section -->
+<section id="resume" class="py-20 bg-gray-50">
+  <div class="container mx-auto px-6">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="text-3xl font-bold mb-4">
+        Download My <span class="border-b-4 border-black">Resume</span>
+      </h2>
+      <p class="text-lg mb-8">
+        Want to see a more detailed overview of my skills and experience? You can view or download my full resume in PDF format.
+      </p>
+
+      <!-- Resume Preview -->
+      <div class="mt-12 max-w-3xl mx-auto">
+        <iframe src="resume.pdf" width="100%" height="450px" class="w-full border rounded shadow"></iframe>
+      </div>
+
+      <!-- Download Button Centered Under Preview -->
+      <div class="mt-8 flex justify-center">
+        <a href="resume.pdf" target="_blank" download
+           class="px-6 py-3 bg-black text-white font-medium rounded hover:bg-gray-800 transition text-center inline-flex items-center">
+          <i class="fas fa-download mr-2"></i> Download Resume
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="py-20">
+  <div class="container mx-auto px-6">
+    <h2 class="text-3xl font-bold text-center mb-4">Get In <span class="border-b-4 border-black">Touch</span></h2>
+    <p class="text-center text-lg mb-16 max-w-2xl mx-auto">Have a project in mind or want to discuss potential opportunities? Feel free to reach out!</p>
+
+    <div class="max-w-4xl mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+        <!-- Contact Info -->
+        <div>
+          <h3 class="text-xl font-semibold mb-6">Contact Information</h3>
+          <div class="space-y-6">
+            <div class="flex items-start">
+              <div class="w-10 h-10 flex items-center justify-center border border-black rounded-full mr-4">
+                <i class="fas fa-envelope"></i>
+              </div>
+              <div>
+                <h4 class="font-bold">Email</h4>
+                <p>snehithachaluvadi@gmail.com</p>
+              </div>
+            </div>
+            <div class="flex items-start">
+              <div class="w-10 h-10 flex items-center justify-center border border-black rounded-full mr-4">
+                <i class="fas fa-phone"></i>
+              </div>
+              <div>
+                <h4 class="font-bold">Phone</h4>
+                <p>+91 6300384492</p>
+              </div>
+            </div>
+            <div class="flex items-start">
+              <div class="w-10 h-10 flex items-center justify-center border border-black rounded-full mr-4">
+                <i class="fas fa-map-marker-alt"></i>
+              </div>
+              <div>
+                <h4 class="font-bold">Location</h4>
+                <p>Andhra Pradesh, Ongole</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-10">
+            <h3 class="text-xl font-semibold mb-6">Follow Me</h3>
+            <div class="flex space-x-4">
+              <a href="https://github.com/snehithachaluvadi" target="_blank" rel="noopener noreferrer" class="w-10 h-10 flex items-center justify-center border border-black rounded-full hover:bg-black hover:text-white transition">
+                <i class="fab fa-github"></i>
+              </a>
+              <a href="https://www.linkedin.com/in/snehitha-chaluvadi" target="_blank" rel="noopener noreferrer" class="w-10 h-10 flex items-center justify-center border border-black rounded-full hover:bg-black hover:text-white transition">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+              <a href="#" class="w-10 h-10 flex items-center justify-center border border-black rounded-full hover:bg-black hover:text-white transition">
+                <i class="fab fa-twitter"></i>
+              </a>
+              <a href="https://www.instagram.com/snehitha_chaluvadi/" target="_blank" rel="noopener noreferrer" class="w-10 h-10 flex items-center justify-center border border-black rounded-full hover:bg-black hover:text-white transition">
+                <i class="fab fa-instagram"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div>
+          <form id="contact-form" class="space-y-6">
+  <div>
+    <label for="name" class="block mb-2 font-medium">Your Name</label>
+    <input type="text" id="name" name="name" required class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:border-black">
+  </div>
+  <div>
+    <label for="email" class="block mb-2 font-medium">Your Email</label>
+    <input type="email" id="email" name="email" required class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:border-black">
+  </div>
+  <div>
+    <label for="title" class="block mb-2 font-medium">Subject</label>
+    <input type="text" id="title" name="title" required class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:border-black">
+  </div>
+  <div>
+    <label for="message" class="block mb-2 font-medium">Message</label>
+    <textarea id="message" name="message" rows="5" required class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:border-black"></textarea>
+  </div>
+  <button type="submit" class="w-full px-6 py-3 bg-black text-white font-medium rounded hover:bg-gray-800 transition">Send Message</button>
+</form>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<div id="footer-trigger" class="h-1"></div>
+<footer class="bg-black text-white py-10">
+  <div class="container mx-auto px-6">
+    <div class="flex flex-col md:flex-row justify-between items-start md:items-center">
+
+      <!-- Left-aligned title -->
+      <div class="w-full md:w-auto text-left mb-6 md:mb-0">
+        <a href="#" class="text-2xl font-bold">PORTFOLIO</a>
+      </div>
+
+      <!-- Right-aligned social icons -->
+      <div class="w-full flex justify-end pr-20 space-x-6">
+        <a href="https://github.com/snehithachaluvadi" target="_blank" rel="noopener noreferrer" class="hover:text-gray-300 transition">
+          <i class="fab fa-github"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/snehitha-chaluvadi" target="_blank" rel="noopener noreferrer" class="hover:text-gray-300 transition">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+        <a href="#" class="hover:text-gray-300 transition">
+          <i class="fab fa-twitter"></i>
+        </a>
+        <a href="https://www.instagram.com/snehitha_chaluvadi/" target="_blank" rel="noopener noreferrer" class="hover:text-gray-300 transition">
+          <i class="fab fa-instagram"></i>
+        </a>
+      </div>
+
+    </div>
+  </div>
+</footer>
+
+<!-- Back to Top Button -->
+<button id="backToTop" class="fixed bottom-8 right-8 w-12 h-12 bg-black text-white rounded-full flex items-center justify-center shadow-lg transition-colors duration-300">
+  <i class="fas fa-arrow-up"></i>
+</button>
+
+<!-- Certificate Modal -->
+<div id="certificateModal"
+     class="fixed inset-0 bg-black/40 flex items-center justify-center z-50 hidden transition-opacity duration-300 ease-in-out opacity-0">
+
+  <div id="certificateModalContent"
+       class="bg-white w-auto max-w-[95vw] max-h-[95vh] mx-4 rounded-lg shadow-lg overflow-hidden relative transform scale-95 transition-transform duration-300 ease-in-out">
+
+    <!-- Close Button -->
+    <button onclick="closeCertificateModal()"
+            class="absolute top-3 right-4 text-black text-2xl font-bold z-10 hover:scale-110 transition">
+      &times;
+    </button>
+
+    <!-- Certificate Image -->
+    <img id="certificateImage"
+         class="h-auto w-full max-h-[90vh] object-contain transition-transform duration-300 ease-in-out"
+         src=""
+         alt="Certificate">
+
+  </div>
+</div>
+<!-- EmailJS SDK -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+<!-- Initialize EmailJS with your Public Key -->
+<script>
+  (function () {
+    emailjs.init("C27I3MLL0w4O5E2Ns");
+  })();
+</script>
+
+<!-- Then load your JS that uses emailjs -->
+<script src="script.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,59 @@
+/* Enforce light color scheme at root level */
+:root {
+  color-scheme: light;
+}
+
+/* Navigation link underline animation */
+.nav-link {
+  position: relative;
+}
+.nav-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -2px;
+  left: 0;
+  background-color: currentColor;
+  transition: width 0.3s ease;
+}
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* Project card hover effect */
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* keep light mode shadow */
+}
+
+/* Remove unnecessary dark override for project cards */
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  left: -7.5px;
+  top: 0;
+  background-color: currentColor;
+}
+
+/* Removed: .dark .timeline-item::before override */
+
+.skill-bar-fill {
+  transition: width 1.5s ease;
+}
+
+/* Back to Top Button */
+#backToTop {
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+#backToTop.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+
