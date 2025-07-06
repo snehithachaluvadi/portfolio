@@ -1,12 +1,14 @@
-// Disable scroll restoration (must be before anything loads)
-if ('scrollRestoration' in history) {
-  history.scrollRestoration = 'manual';
-}
+// Scroll & Load Behavior: Reset scroll on reload and disable scroll restoration
+window.addEventListener("DOMContentLoaded", () => {
+  if ("scrollRestoration" in history) {
+    history.scrollRestoration = "manual";
+  }
 
-// Force top on hard reload
-window.onbeforeunload = () => {
+  document.documentElement.scrollTop = 0;
+  document.body.scrollTop = 0;
+
   window.scrollTo(0, 0);
-};
+});
 
 // Animate skill bars
 const animateSkillBars = () => {
@@ -26,7 +28,7 @@ const animateSkillBars = () => {
   });
 };
 
-// On load scroll top + start animation
+// On full load, ensure scroll to top and start animations
 window.addEventListener('load', () => {
   window.scrollTo(0, 0);
   animateSkillBars();
@@ -42,7 +44,7 @@ if (mobileMenuButton && mobileMenu) {
   });
 }
 
-// Smooth scrolling for nav
+// Smooth scrolling for nav links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function (e) {
     e.preventDefault();
@@ -184,7 +186,7 @@ if (footerTrigger && backToTopButton) {
   observer.observe(footerTrigger);
 }
 
-// 🌓 Theme Toggle (Desktop + Mobile)
+// 🌓 Theme Toggle
 const html = document.documentElement;
 const toggleBtns = [document.getElementById("themeToggle"), document.getElementById("themeToggleMobile")];
 
